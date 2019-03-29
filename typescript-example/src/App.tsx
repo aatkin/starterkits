@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+interface Props {
+  projectName: string;
+  year: number;
+}
+
+class App extends Component<Props> {
   render() {
+    const { projectName, year } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -11,6 +17,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
+          <p>This is {projectName}, made in {year}.</p>
           <a
             className="App-link"
             href="https://reactjs.org"
